@@ -1,5 +1,14 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id$
+ * Icesi University (Cali - Colombia)
+ * TIC Department- Algorithms and programming II
+ * Five Lab
+ * @Author: Christian Flor christian.flor1@correo.icesi.edu.co> 
+ * @Date: 26 January 2019
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
 package ui;
-
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;

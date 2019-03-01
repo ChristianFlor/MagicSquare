@@ -1,3 +1,13 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id$
+ * Icesi University (Cali - Colombia)
+ * TIC Department- Algorithms and programming II
+ * Five Lab
+ * @Author: Christian Flor christian.flor1@correo.icesi.edu.co> 
+ * @Date: 18 February 2019
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
 package customExceptions;
 
 public class UncompatibleValuesException extends Throwable{

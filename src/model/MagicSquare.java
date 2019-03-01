@@ -1,10 +1,22 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id$
+ * Icesi University (Cali - Colombia)
+ * TIC Department- Algorithms and programming II
+ * Five Lab
+ * @Author: Christian Flor christian.flor1@correo.icesi.edu.co> 
+ * @Date: 26 January 2019
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
 package model;
 
 import customExceptions.IllegalSizeException;
 import customExceptions.UncompatibleValuesException;
 
 public class MagicSquare {
-	//Constants
+	// -----------------------------------------------------------------
+    // Constants
+    // -----------------------------------------------------------------
 	public final static String NORTH="NORTH";
 	public final static String SOUTH="SOUTH";
 	public final static String EAST="EAST";
@@ -15,13 +27,17 @@ public class MagicSquare {
 	public final static String SOUTHWEST="SOUTHWEST";
 	public final static String SOUTHEAST="SOUTHEAST";
 	
-	//Attributes
+	// -----------------------------------------------------------------
+    // Atributes
+    // -----------------------------------------------------------------
 	private int[][] magicSquare;
 	private String startPoint;
 	private String direction;
 	private int size;
 	
-	//Builder
+	// -----------------------------------------------------------------
+    // Builder
+    // -----------------------------------------------------------------
 	/**
 	 * Builder for MagicSquare class.<br>
 	 * It allows you to create a MagicSquare object that could be shown on screen<br>
@@ -34,7 +50,27 @@ public class MagicSquare {
 	 * @throws IllegalSizeException 
 	 */
 	public MagicSquare(String startPoint, String direction, int size) throws IllegalSizeException, UncompatibleValuesException {
-		initExceptions();
+		if(size<1 || size > 100 || size%2 ==0) {
+			throw new IllegalSizeException(size);
+		}
+		
+		if(startPoint.equals(NORTH)) {
+			if(direction.equals(SOUTHWEST) || direction.equals(SOUTHEAST)) {
+				throw new UncompatibleValuesException(startPoint, direction);
+			}
+		}else if(startPoint.equals(SOUTH)){
+			if(direction.equals(NORTHWEST) || direction.equals(NORTHEAST)) {
+				throw new UncompatibleValuesException(startPoint, direction);
+			}
+		}else if(startPoint.equals(EAST)){
+			if(direction.equals(NORTHWEST) || direction.equals(SOUTHWEST)) {
+				throw new UncompatibleValuesException(startPoint, direction);
+			}
+		}else if(startPoint.equals(WEST)){
+			if(direction.equals(SOUTHEAST) || direction.equals(NORTHEAST)) {
+				throw new UncompatibleValuesException(startPoint, direction);
+			}
+		}
 		this.startPoint=startPoint;
 		this.direction=direction;
 		this.size=size;
@@ -42,7 +78,9 @@ public class MagicSquare {
 		
 	}
 	
-	//Methods get and set
+	// -----------------------------------------------------------------
+    // Methods Atributes
+    // -----------------------------------------------------------------
 	/**
 	 * This method return the initial position
 	 * @return a matrix
@@ -100,33 +138,9 @@ public class MagicSquare {
 		this.startPoint = startPoint;
 	}
 	
-	//Methods
-	/**
-	 * 
-	 */
-	public void initExceptions() throws UncompatibleValuesException, IllegalSizeException {
-		if(size<1 || size > 100 || size%2 ==0) {
-			throw new IllegalSizeException(size);
-		}
-		
-		if(startPoint.equals(NORTH)) {
-			if(direction.equals(SOUTHWEST) || direction.equals(SOUTHEAST)) {
-				throw new UncompatibleValuesException(startPoint, direction);
-			}
-		}else if(startPoint.equals(SOUTH)){
-			if(direction.equals(NORTHWEST) || direction.equals(NORTHEAST)) {
-				throw new UncompatibleValuesException(startPoint, direction);
-			}
-		}else if(startPoint.equals(EAST)){
-			if(direction.equals(NORTHWEST) || direction.equals(SOUTHWEST)) {
-				throw new UncompatibleValuesException(startPoint, direction);
-			}
-		}else if(startPoint.equals(WEST)){
-			if(direction.equals(SOUTHEAST) || direction.equals(NORTHEAST)) {
-				throw new UncompatibleValuesException(startPoint, direction);
-			}
-		}
-	}
+	// -----------------------------------------------------------------
+    // Methods 
+    // -----------------------------------------------------------------
 	/**
 	 * This method calculate the magic constant.
 	 * @return a integer that magic constant

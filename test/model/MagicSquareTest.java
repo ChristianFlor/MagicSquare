@@ -1,3 +1,13 @@
+/**
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ * $Id$
+ * Icesi University (Cali - Colombia)
+ * TIC Department- Algorithms and programming II
+ * Five Lab
+ * @Author: Christian Flor christian.flor1@correo.icesi.edu.co> 
+ * @Date: 18 February 2019
+ * ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ */
 package model;
 
 import static org.junit.Assert.assertEquals;
@@ -203,23 +213,6 @@ public class MagicSquareTest {
 		try {
 			@SuppressWarnings("unused")
 			MagicSquare ms = new MagicSquare(MagicSquare.NORTH, MagicSquare.NORTHWEST, 8);
-			fail();
-		}catch (IllegalSizeException | UncompatibleValuesException e) {
-			System.out.println(e.getMessage());
-		}
-	}
-	/**
-	 * This test verify that the custom exception (UncompatibleValues Exception) is working correctly <br>
-	 * and verify when the starting point with the chosen address is not compatible.
-	 * @throws UncompatibleValuesException 
-	 * @throws IllegalSizeException 
-	 */
-	@Test
-	public void testMagicSquareUncompatible(){
-		setupScenary1();
-		try {
-			@SuppressWarnings("unused")
-			MagicSquare ms = new MagicSquare(MagicSquare.NORTH, MagicSquare.SOUTHEAST, 7);
 			fail();
 		}catch (IllegalSizeException | UncompatibleValuesException e) {
 			System.out.println(e.getMessage());
